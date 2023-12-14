@@ -1,7 +1,7 @@
 import "dotenv/config";
 import cors from "cors";
 import express from "express";
-import { router as hitchesRouter } from "./hitches/router";
+import { router as hitchesRouter } from "./hitches/router.js";
 
 const app = express();
 
@@ -10,4 +10,6 @@ app.use(express.json()); //body parser -> checkt den header 'content-type' (apli
 
 app.use("/api/hitches", hitchesRouter);
 
-app.listen(process.env.PORT, () => console.log("process.env.PORT"));
+app.listen(process.env.PORT, () =>
+  console.log("Port: http://localhost:", process.env.PORT)
+);
