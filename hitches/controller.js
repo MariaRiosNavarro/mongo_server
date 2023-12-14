@@ -23,3 +23,16 @@ export async function getHitches(req, res) {
     res.status(500).end();
   }
 }
+
+// export async function getOneHitches(req, res) {
+//   try {
+//     const dbResponse = await dbo
+//       .collection("article")
+//       .find({ _id: new ObjectId("657acc35d2dd3feb8d4f2952") })
+//       .toArray();
+//     console.log(dbResponse);
+//     res.json(dbResponse);
+//   } catch (error) {
+//     res.status(500).end();
+//   }
+// }
