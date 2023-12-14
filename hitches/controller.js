@@ -16,6 +16,10 @@ export async function addHitch(req, res) {
 
 export async function getHitches(req, res) {
   try {
+    // das 2.{} in find kann man benutzen um den Datenbankzeiger optionen mit zu geben. limit limitiert die anzahl der geholten dokumente und skip überspringt die angeben anzahl von dokumente
+    // die gewünschte projektion der daten kann mit dem optionalen .project({name:1}) konfiguriert werden
+    // const dbResponse = await dbo.collection('article').find({<ganz normale find operationen ausführen>}, { limit: 2, skip: 3 }).project({ name: 1 }).toArray()
+    // const dbResponse = await dbo.collection('article').find({ preis: { $gte: 99 } }).toArray()
     const dbResponse = await dbo.collection("article").find().toArray();
     console.log(dbResponse);
     res.json(dbResponse);
