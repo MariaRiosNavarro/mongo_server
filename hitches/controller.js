@@ -24,6 +24,7 @@ export async function getHitches(req, res) {
     console.log(dbResponse);
     res.json(dbResponse);
   } catch (error) {
+    console.log(error);
     res.status(500).end();
   }
 }
